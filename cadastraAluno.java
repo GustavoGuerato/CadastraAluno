@@ -3,8 +3,8 @@ package JdevCurso.cadastroAluno;
 public class cadastraAluno {
 
   public static void main(String[] args) {
-    /*new aluno é uma instancia (criação de objeto) */
-    /*aluno1 é uma referencia para o objeto aluno */
+    /* new aluno é uma instancia (criação de objeto) */
+    /* aluno1 é uma referencia para o objeto aluno */
     Aluno aluno1 = new Aluno();
     aluno1.setNome("gustavo");
     aluno1.setIdade(19);
@@ -17,6 +17,7 @@ public class cadastraAluno {
     aluno1.setNota4(78.07);
 
     System.out.println(aluno1.getMediaNota());
-   
+    System.out.println("Resultado é = " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
+
   }
 }
