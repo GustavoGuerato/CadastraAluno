@@ -24,22 +24,22 @@ public class cadastraAluno {
 
     String nomePai = JOptionPane.showInputDialog("qual o nome do pai do aluno: ");
 
-    String matricula = JOptionPane.showInputDialog("qual a data de matriculad do aluno: ");
+    String matricula = JOptionPane.showInputDialog("qual a data de matricula do aluno: ");
 
     String escola = JOptionPane.showInputDialog("qual o nome da escola que o aluno está se matriculando: ");
 
     String serieMatriculado = JOptionPane.showInputDialog("qual a serie do aluno: ");
 
-    String inputNota1 = JOptionPane.showInputDialog("insira o valor da nota1: ");
+    String inputNota1 = JOptionPane.showInputDialog("insira o valor da nota 1: ");
     double nota1 = Double.parseDouble(inputNota1);
 
-    String inputNota2 = JOptionPane.showInputDialog("insira o valor da nota2: ");
+    String inputNota2 = JOptionPane.showInputDialog("insira o valor da nota 2: ");
     double nota2 = Double.parseDouble(inputNota2);
 
-    String inputNota3 = JOptionPane.showInputDialog("insira o valor da nota1: ");
+    String inputNota3 = JOptionPane.showInputDialog("insira o valor da nota 3: ");
     double nota3 = Double.parseDouble(inputNota3);
 
-    String inputNota4 = JOptionPane.showInputDialog("insira o valor da nota1: ");
+    String inputNota4 = JOptionPane.showInputDialog("insira o valor da nota 4: ");
     double nota4 = Double.parseDouble(inputNota4);
 
     Aluno aluno1 = new Aluno();
