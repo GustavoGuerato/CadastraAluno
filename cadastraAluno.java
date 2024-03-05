@@ -59,8 +59,7 @@ public class cadastraAluno {
     aluno1.setNota3(nota3);
     aluno1.setNota4(nota4);
 
-    System.out.println(aluno1.getMediaNota());
-    System.out.println("Resultado é = " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
+    System.out.println(aluno1.toString());
 
   }
 }
