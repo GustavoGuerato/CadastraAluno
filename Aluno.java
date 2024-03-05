@@ -133,15 +133,15 @@ public class Aluno {
       this.nota4 = nota4;
    }
 
-   public double getMediaNota(){
-      return(nota1 + nota2 + nota3 + nota4)/4;
+   public double getMediaNota() {
+      return (nota1 + nota2 + nota3 + nota4) / 4;
    }
 
-   public boolean getAlunoAprovado(){
+   public boolean getAlunoAprovado() {
       double media = this.getMediaNota();
       if (media >= 70) {
          return true;
-      }else{
+      } else {
          return false;
       }
    }
@@ -153,6 +153,41 @@ public class Aluno {
             + escola + ", serieMatriculado=" + serieMatriculado + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3="
             + nota3 + ", nota4=" + nota4 + "]";
    }
+
+   @Override
+   public int hashCode() {
+      final int prime = 31;
+      int result = 1;
+      result = prime * result + ((rg == null) ? 0 : rg.hashCode());
+      result = prime * result + numeroCPF;
+      result = prime * result + ((matricula == null) ? 0 : matricula.hashCode());
+      return result;
+   }
+
+   @Override
+   public boolean equals(Object obj) {
+      if (this == obj)
+         return true;
+      if (obj == null)
+         return false;
+      if (getClass() != obj.getClass())
+         return false;
+      Aluno other = (Aluno) obj;
+      if (rg == null) {
+         if (other.rg != null)
+            return false;
+      } else if (!rg.equals(other.rg))
+         return false;
+      if (numeroCPF != other.numeroCPF)
+         return false;
+      if (matricula == null) {
+         if (other.matricula != null)
+            return false;
+      } else if (!matricula.equals(other.matricula))
+         return false;
+      return true;
+   }
+
 
    
 }
