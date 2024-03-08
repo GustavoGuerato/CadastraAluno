@@ -30,23 +30,6 @@ public class cadastraAluno {
 
     String serieMatriculado = JOptionPane.showInputDialog("qual a serie do aluno: ");
 
-    String inputDisciplina1 = JOptionPane.showInputDialog("qual o nome da primeira materia? ");
-    String inputDisciplina2 = JOptionPane.showInputDialog("qual o nome da segunda materia? ");
-    String inputDisciplina3 = JOptionPane.showInputDialog("qual o nome da terceira materia? ");
-    String inputDisciplina4 = JOptionPane.showInputDialog("qual o nome da quarta materia? ");
-
-    String inputNota1 = JOptionPane.showInputDialog("insira o valor da nota 1: ");
-    double nota1 = Double.parseDouble(inputNota1);
-
-    String inputNota2 = JOptionPane.showInputDialog("insira o valor da nota 2: ");
-    double nota2 = Double.parseDouble(inputNota2);
-
-    String inputNota3 = JOptionPane.showInputDialog("insira o valor da nota 3: ");
-    double nota3 = Double.parseDouble(inputNota3);
-
-    String inputNota4 = JOptionPane.showInputDialog("insira o valor da nota 4: ");
-    double nota4 = Double.parseDouble(inputNota4);
-
     Aluno aluno1 = new Aluno();
 
     aluno1.setNome(nome);
@@ -60,29 +43,16 @@ public class cadastraAluno {
     aluno1.setEscola(escola);
     aluno1.setSerieMatriculado(serieMatriculado);
 
-    Disciplina disciplina1 = new Disciplina();
-    disciplina1.setDisciplina(inputDisciplina1);
-    disciplina1.setNota(nota1);
+    for (int pos = 1; pos <= 4; pos++) {
+      String nomeDisciplina = JOptionPane.showInputDialog("qual o nome da disciplina " + pos + "? ");
+      double nota = Double.parseDouble(JOptionPane.showInputDialog("Insira o valor da nota " + pos + ": "));
 
-    aluno1.getDisciplinas().add(disciplina1);
-
-    Disciplina disciplina2 = new Disciplina();
-    disciplina2.setDisciplina(inputDisciplina2);
-    disciplina2.setNota(nota2);
-
-    aluno1.getDisciplinas().add(disciplina2);
-
-    Disciplina disciplina3 = new Disciplina();
-    disciplina3.setDisciplina(inputDisciplina3);
-    disciplina3.setNota(nota3);
-
-    aluno1.getDisciplinas().add(disciplina3);
-
-    Disciplina disciplina4 = new Disciplina();
-    disciplina3.setDisciplina(inputDisciplina4);
-    disciplina3.setNota(nota4);
-
-    aluno1.getDisciplinas().add(disciplina4);
+      Disciplina disciplina = new Disciplina();
+      disciplina.setDisciplina(nomeDisciplina);
+      disciplina.setNota(nota);
+      
+      aluno1.getDisciplinas().add(disciplina);
+    }
 
     Aluno aluno2 = new Aluno();
 
