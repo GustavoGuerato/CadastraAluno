@@ -1,5 +1,8 @@
 package JdevCurso.cadastroAluno;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Aluno {
 
    /* esses são os atributos da classe aluno */
@@ -14,14 +17,14 @@ public class Aluno {
    private String escola;
    private String serieMatriculado;
 
-   private Disciplina disciplina = new Disciplina();
+   private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
-   public void setDisciplina(Disciplina disciplina) {
-      this.disciplina = disciplina;
+   public List<Disciplina> getDisciplinas() {
+      return disciplinas;
    }
 
-   public Disciplina getDisciplina() {
-      return disciplina;
+   public void setDisciplinas(List<Disciplina> disciplinas) {
+      this.disciplinas = disciplinas;
    }
 
    public Aluno() {
@@ -108,7 +111,12 @@ public class Aluno {
    }
 
    public double getMediaNota() {
-      return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4()) / 4;
+      double somaNotas = 0.0;
+
+      for (Disciplina disciplina : disciplinas) {
+         somaNotas += disciplina.getNota();
+      }
+      return somaNotas / disciplinas.size();
    }
 
    public boolean getAlunoAprovado() {
@@ -120,13 +128,11 @@ public class Aluno {
       }
    }
 
-   
-
    @Override
    public String toString() {
       return "Aluno [nome=" + nome + ", idade=" + idade + ", nascimento=" + nascimento + ", rg=" + rg + ", numeroCPF="
             + numeroCPF + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", matricula=" + matricula + ", escola="
-            + escola + ", serieMatriculado=" + serieMatriculado + ", disciplina=" + disciplina + "]";
+            + escola + ", serieMatriculado=" + serieMatriculado + "]";
    }
 
    @Override

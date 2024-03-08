@@ -30,10 +30,10 @@ public class cadastraAluno {
 
     String serieMatriculado = JOptionPane.showInputDialog("qual a serie do aluno: ");
 
-    String disciplina1 = JOptionPane.showInputDialog("qual o nome da primeira materia? ");
-    String disciplina2 = JOptionPane.showInputDialog("qual o nome da segunda materia? ");
-    String disciplina3 = JOptionPane.showInputDialog("qual o nome da terceira materia? ");
-    String disciplina4 = JOptionPane.showInputDialog("qual o nome da quarta materia? ");
+    String inputDisciplina1 = JOptionPane.showInputDialog("qual o nome da primeira materia? ");
+    String inputDisciplina2 = JOptionPane.showInputDialog("qual o nome da segunda materia? ");
+    String inputDisciplina3 = JOptionPane.showInputDialog("qual o nome da terceira materia? ");
+    String inputDisciplina4 = JOptionPane.showInputDialog("qual o nome da quarta materia? ");
 
     String inputNota1 = JOptionPane.showInputDialog("insira o valor da nota 1: ");
     double nota1 = Double.parseDouble(inputNota1);
@@ -59,16 +59,30 @@ public class cadastraAluno {
     aluno1.setMatricula(matricula);
     aluno1.setEscola(escola);
     aluno1.setSerieMatriculado(serieMatriculado);
-    aluno1.getDisciplina().setDisciplina1(disciplina1);
-    aluno1.getDisciplina().setDisciplina2(disciplina2);
-    aluno1.getDisciplina().setDisciplina3(disciplina3);
-    aluno1.getDisciplina().setDisciplina4(disciplina4);
-    aluno1.getDisciplina().setNota1(nota1);
-    aluno1.getDisciplina().setNota2(nota2);
-    aluno1.getDisciplina().setNota3(nota3);
-    aluno1.getDisciplina().setNota4(nota4);
 
-    System.out.println(aluno1.toString());
+    Disciplina disciplina1 = new Disciplina();
+    disciplina1.setDisciplina(inputDisciplina1);
+    disciplina1.setNota(nota1);
+
+    aluno1.getDisciplinas().add(disciplina1);
+
+    Disciplina disciplina2 = new Disciplina();
+    disciplina2.setDisciplina(inputDisciplina2);
+    disciplina2.setNota(nota2);
+
+    aluno1.getDisciplinas().add(disciplina2);
+
+    Disciplina disciplina3 = new Disciplina();
+    disciplina3.setDisciplina(inputDisciplina3);
+    disciplina3.setNota(nota3);
+
+    aluno1.getDisciplinas().add(disciplina3);
+
+    Disciplina disciplina4 = new Disciplina();
+    disciplina3.setDisciplina(inputDisciplina4);
+    disciplina3.setNota(nota4);
+
+    aluno1.getDisciplinas().add(disciplina4);
 
     Aluno aluno2 = new Aluno();
 
@@ -82,14 +96,6 @@ public class cadastraAluno {
     aluno2.setMatricula(matricula);
     aluno2.setEscola(escola);
     aluno2.setSerieMatriculado(serieMatriculado);
-    aluno2.getDisciplina().setDisciplina1(disciplina1);
-    aluno2.getDisciplina().setDisciplina2(disciplina2);
-    aluno2.getDisciplina().setDisciplina3(disciplina3);
-    aluno2.getDisciplina().setDisciplina4(disciplina4);
-    aluno2.getDisciplina().setNota1(nota1);
-    aluno2.getDisciplina().setNota2(nota2);
-    aluno2.getDisciplina().setNota3(nota3);
-    aluno2.getDisciplina().setNota4(nota4);
 
   }
 }
