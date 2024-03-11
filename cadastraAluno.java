@@ -13,7 +13,7 @@ public class cadastraAluno {
 
     List<Aluno> alunos = new ArrayList<Aluno>();
 
-    for (int qtd = 1; qtd <= 15; qtd++) {
+    for (int qtd = 1; qtd <= 2; qtd++) {
 
       String nome = JOptionPane.showInputDialog("qual o nome do aluno" + qtd + "?");
 
@@ -50,7 +50,7 @@ public class cadastraAluno {
       aluno1.setEscola(escola);
       aluno1.setSerieMatriculado(serieMatriculado);
 
-      for (int pos = 1; pos <= 12; pos++) {
+      for (int pos = 1; pos <= 1; pos++) {
         String nomeDisciplina = JOptionPane.showInputDialog("qual o nome da disciplina " + pos + "? ");
         double nota = Double.parseDouble(JOptionPane.showInputDialog("Insira o valor da nota " + pos + ": "));
 
@@ -80,24 +80,31 @@ public class cadastraAluno {
       }
       alunos.add(aluno1);
     }
-    for (Aluno aluno : alunos) {
+    for (int pos = 0; pos < alunos.size(); pos++) {
+      Aluno aluno = alunos.get(pos);
+
       if (aluno.getNome().equalsIgnoreCase("Gustavo")) {
-        alunos.remove(aluno);
-        break;
-      } else {
-        System.out.println(aluno);
-        System.out.println("media do aluno é " + aluno.getMediaNota());
-        System.out.println("resultado é" + aluno.getAlunoAprovado2());
+        Aluno trocar = new Aluno();
+        trocar.setNome("Aluno foi alterado");
+
+        Disciplina disciplina = new Disciplina();
+        disciplina.setDisciplina("banco de dados");
+        disciplina.setNota(99);
+
+        trocar.getDisciplinas().add(disciplina);
+
+        alunos.set(pos, trocar);
+        aluno = alunos.get(pos);
       }
 
-    }
-    for (Aluno aluno : alunos) {
-      System.out.println("alunos que sobraram são ");
-      System.out.println(aluno.getNome());
-      System.out.println("e suas materias são: ");
+      System.out.println("Aluno " + aluno.getNome());
+      System.out.println("media do aluno " + aluno.getNome() + " é: " + aluno.getMediaNota());
+      System.out.println("resultado: " + aluno.getAlunoAprovado2());
 
-      for (Disciplina disciplina : aluno.getDisciplinas()) {
-        System.out.println(disciplina.getDisciplina());
+      for (Disciplina disc : aluno.getDisciplinas()) {
+        System.out.println("as disciplinas disponiveis são: ");
+        System.out.println(disc.getDisciplina());
+        System.out.println("e suas ntoas são: " + disc.getNota());
 
       }
     }

@@ -3,6 +3,8 @@ package JdevCurso.cadastroAluno;
 import java.util.ArrayList;
 import java.util.List;
 
+import JdevCurso.cadastroAluno.constante.StatusAlunos;
+
 public class Aluno {
 
    /* esses são os atributos da classe aluno */
@@ -132,12 +134,12 @@ public class Aluno {
       double media = this.getMediaNota();
       if (media >= 50) {
          if (media >= 70) {
-            return "aluno aprovado";
+            return StatusAlunos.APROVADO;
          } else {
-            return "aluno de recuperação";
+            return StatusAlunos.RECUPERACAO;
          }
       } else {
-         return "aluno está de recuperação";
+         return StatusAlunos.REPROVADO;
       }
    }
 
