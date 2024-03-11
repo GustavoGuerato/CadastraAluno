@@ -128,6 +128,19 @@ public class Aluno {
       }
    }
 
+   public String getAlunoAprovado2() {
+      double media = this.getMediaNota();
+      if (media >= 50) {
+         if (media >= 70) {
+            return "aluno aprovado";
+         } else {
+            return "aluno de recuperação";
+         }
+      } else {
+         return "aluno está de recuperação";
+      }
+   }
+
    @Override
    public String toString() {
       return "Aluno [nome=" + nome + ", idade=" + idade + ", nascimento=" + nascimento + ", rg=" + rg + ", numeroCPF="

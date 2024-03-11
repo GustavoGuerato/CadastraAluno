@@ -43,7 +43,7 @@ public class cadastraAluno {
     aluno1.setEscola(escola);
     aluno1.setSerieMatriculado(serieMatriculado);
 
-    for (int pos = 1; pos <= 4; pos++) {
+    for (int pos = 1; pos <= 12; pos++) {
       String nomeDisciplina = JOptionPane.showInputDialog("qual o nome da disciplina " + pos + "? ");
       double nota = Double.parseDouble(JOptionPane.showInputDialog("Insira o valor da nota " + pos + ": "));
 
@@ -54,6 +54,13 @@ public class cadastraAluno {
       aluno1.getDisciplinas().add(disciplina);
     }
 
+    int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina? ");
+
+    if (escolha == 0) {
+      String disciplinaRemover = JOptionPane.showInputDialog("qual disciplina deseja remover? 1,2,3,4,5,6,7,8,9,10,11 ou 12");
+      aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - 1);
+    }
+    
     Aluno aluno2 = new Aluno();
 
     aluno2.setNome(nome);
