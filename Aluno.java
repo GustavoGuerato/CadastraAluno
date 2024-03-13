@@ -5,16 +5,9 @@ import java.util.List;
 
 import JdevCurso.cadastroAluno.constante.StatusAlunos;
 
-public class Aluno {
+public class Aluno extends Pessoa {
 
    /* esses são os atributos da classe aluno */
-   private String nome;
-   private int idade;
-   private String nascimento;
-   private String rg;
-   private int numeroCPF;
-   private String nomeMae;
-   private String nomePai;
    private String matricula;
    private String escola;
    private String serieMatriculado;
