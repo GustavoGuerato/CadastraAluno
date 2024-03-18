@@ -177,4 +177,10 @@ public class Aluno extends Pessoa {
       return true;
    }
 
+   @Override
+   public boolean pessoaMaiorIdade() {
+       // TODO Auto-generated method stub
+       return super.pessoaMaiorIdade();
+   }
+
 }

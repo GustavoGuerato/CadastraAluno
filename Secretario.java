@@ -35,6 +35,18 @@ public class Secretario extends Pessoa {
                 + anosExperiencia + "]";
     }
 
-    
+    @Override
+    public boolean pessoaMaiorIdade() {
+        if (idade < 18) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public String msgMaiorIdade() {
+        return this.pessoaMaiorIdade() ? "a pessoa tem a idade necessaria para ser contratado"
+                : "a pessoa não tem a idade minima";
+    }
 
 }

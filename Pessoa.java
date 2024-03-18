@@ -65,6 +65,10 @@ public class Pessoa {
         this.nomePai = nomePai;
     }
 
+    public boolean pessoaMaiorIdade() {
+        return idade >= 18;
+    }
+
     @Override
     public String toString() {
         return "Pessoa [nome=" + nome + ", idade=" + idade + ", nascimento=" + nascimento + ", rg=" + rg
@@ -98,7 +102,5 @@ public class Pessoa {
             return false;
         return true;
     }
-
-    
 
 }
