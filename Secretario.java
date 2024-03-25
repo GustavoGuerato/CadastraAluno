@@ -1,6 +1,8 @@
 package JdevCurso.cadastroAluno;
 
-public class Secretario extends Pessoa {
+import JdevCurso.cadastroAluno.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa implements PermitirAcesso {
     private String registro;
     private String nivelCargo;
     private int anosExperiencia;
@@ -47,6 +49,18 @@ public class Secretario extends Pessoa {
     public String msgMaiorIdade() {
         return this.pessoaMaiorIdade() ? "a pessoa tem a idade necessaria para ser contratado"
                 : "a pessoa não tem a idade minima";
+    }
+
+    @Override
+    public double salario() {
+        // TODO Auto-generated method stub
+        return 2500.00;
+    }
+
+    @Override
+    public boolean autenticar(String login, String senha) {
+        // TODO Auto-generated method stub
+        return login.equals("admin") && senha.equals("123");
     }
 
 }

@@ -1,6 +1,6 @@
 package JdevCurso.cadastroAluno;
 
-public class Pessoa {
+public abstract class Pessoa {
     protected String nome;
     protected int idade;
     protected String nascimento;
@@ -8,6 +8,8 @@ public class Pessoa {
     protected int numeroCPF;
     protected String nomeMae;
     protected String nomePai;
+
+    public abstract double salario();
 
     public String getNome() {
         return nome;

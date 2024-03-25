@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import JdevCurso.cadastroAluno.constante.StatusAlunos;
+import JdevCurso.cadastroAluno.interfaces.PermitirAcesso;
 
 public class cadastraAluno {
 
@@ -16,7 +17,10 @@ public class cadastraAluno {
 
     String login = JOptionPane.showInputDialog("coloque seu login");
     String senha = JOptionPane.showInputDialog("coloque sua senha");
-    if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("123")) {
+
+    PermitirAcesso secretario = new Secretario();
+
+    if (secretario.autenticar(login, senha)) {
 
       List<Aluno> alunos = new ArrayList<Aluno>();
 
@@ -136,7 +140,7 @@ public class cadastraAluno {
         System.out.println("o aluno:  " + aluno.getNome());
         System.out.println("teve o resultado: " + aluno.getAlunoAprovado2());
       }
-    }else{
+    } else {
       System.out.println("voce errou alguma credencial");
     }
   }
