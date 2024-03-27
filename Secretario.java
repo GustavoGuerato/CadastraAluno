@@ -7,6 +7,13 @@ public class Secretario extends Pessoa implements PermitirAcesso {
     private String nivelCargo;
     private int anosExperiencia;
 
+    private String login;
+    private String senha;
+
+    public Secretario(String login, String senha) {
+
+    }
+
     public String getRegistro() {
         return registro;
     }
